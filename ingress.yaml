@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hello-devops-ingress
+spec:
+  rules:
+  - host: hello-devops.local  # Dominio o nombre del host (cambiar según tu configuración)
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: hello-devops-service
+            port:
+              number: 80

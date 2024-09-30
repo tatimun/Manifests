@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-devops-deployment
+spec:
+  replicas: 2  # Número de réplicas
+  selector:
+    matchLabels:
+      app: hello-devops
+  template:
+    metadata:
+      labels:
+        app: hello-devops
+    spec:
+      containers:
+      - name: hello-devops-container
+        image: tatimun/hello-devops:latest  # Cambia "tatimun" por tu usuario de Docker Hub
+        ports:
+        - containerPort: 8080
+        env:
+        - name: ENVIRONMENT
+          value: "production"  # Variable de entorno opcional
