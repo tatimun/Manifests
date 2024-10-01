@@ -4,11 +4,11 @@ metadata:
   name: hello-devops-service
   namespace: default
 spec:
-  type: NodePort  # Cambiado de ClusterIP a NodePort
+  type: ClusterIP  
   ports:
     - protocol: TCP
-      port: 80  # Puerto interno
-      targetPort: 8080  # Puerto del contenedor donde está la aplicación
-      nodePort: 30000  # O puedes dejar que Kubernetes asigne un puerto automáticamente
+      port: 80  
+      targetPort: 8080  
+      nodePort: 30000  
   selector:
     app: hello-devops
