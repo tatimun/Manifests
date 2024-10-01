@@ -4,7 +4,7 @@ metadata:
   name: hello-devops-service
   namespace: default
 spec:
-  type: ClusterIP  
+  type: NodePort  
   ports:
     - protocol: TCP
       port: 80  
